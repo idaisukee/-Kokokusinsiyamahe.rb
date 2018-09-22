@@ -1,3 +1,8 @@
+require 'bundler/setup'
+Bundler.require(:default)
+
+require 'date'
+
 class Kokokusinsiyamahe
 
   def date(yday, leap)
