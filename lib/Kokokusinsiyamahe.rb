@@ -35,9 +35,3 @@ class Kokokusinsiyamahe
   end
 end
 
-p Kokokusinsiyamahe.date(1, true)
-p Kokokusinsiyamahe.date(40, true)
-p Kokokusinsiyamahe.date(365, true)
-p Kokokusinsiyamahe.date(366, true)
-p Kokokusinsiyamahe.date(400, true)
-p Kokokusinsiyamahe.date(4000, true)
