@@ -11,12 +11,15 @@ class Kokokusinsiyamahe
 		31, 31, 30,
 		31, 30, 31
 	]
-	ARRAY_LEAP = [
-		31, 29, 31,
-		30, 31, 30,
-		31, 31, 30,
-		31, 30, 31
-	]
+
+	ARRAY_LEAP = ARRAY_NON_LEAP.map.with_index do |v, k|
+		if k == 1 then
+			29
+		else
+			v
+		end
+	end
+
   def self.date(yday, leap)
 		if leap then
 			array = ARRAY_LEAP
