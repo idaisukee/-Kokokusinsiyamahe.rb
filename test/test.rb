@@ -13,15 +13,26 @@ class SampleTest < Test::Unit::TestCase
 		assert_equal([1, 0], Kokokusinsiyamahe.date(31, true))
 		assert_equal([1, 1], Kokokusinsiyamahe.date(32, true))
 		start = DateTime.new(2020, 1, 1, 0, 0, 0, Rational(9, 24))
-		Range.new(start, start + 365).each do |date_time|
+		Range.new(start, start + 366).each do |date_time|
 			assert_equal(
-				Kokokusinsiyamahe.date(date_time.yday - 1, Kokokusinsiyamahe::ARRAY_LEAP),
-				[date_time.month - 1, date_time.day - 1]
+				[date_time.month - 1, date_time.day - 1],
+				Kokokusinsiyamahe.date(date_time.yday - 1, true)
 			)
 		end
 	end
 			
 	def test_date_non_leap
+		assert_equal([0, 1], Kokokusinsiyamahe.date(1, false))
+		assert_equal([0, 30], Kokokusinsiyamahe.date(30, false))
+		assert_equal([1, 0], Kokokusinsiyamahe.date(31, false))
+		assert_equal([1, 1], Kokokusinsiyamahe.date(32, false))
+		start = DateTime.new(2021, 1, 1, 0, 0, 0, Rational(9, 24))
+		Range.new(start, start + 365).each do |date_time|
+			assert_equal(
+				[date_time.month - 1, date_time.day - 1],
+				Kokokusinsiyamahe.date(date_time.yday - 1, false)
+			)
+		end
 	end
 
 	def test_yday_leap
