@@ -2,6 +2,7 @@ require 'bundler/setup'
 Bundler.require(:default)
 
 require 'date'
+require 'Untoutiyaumahe'
 
 class Kokokusinsiyamahe
 
