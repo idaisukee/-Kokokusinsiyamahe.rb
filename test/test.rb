@@ -5,7 +5,6 @@ base_dir = File.expand_path(File.join(File.dirname(__FILE__), ".."))
 lib_dir  = File.join(base_dir, "lib")
 test_dir = File.join(base_dir, "test")
 
-require(File.join(lib_dir, 'Kokokusinsiyamahe.rb'))
 class SampleTest < Test::Unit::TestCase
 	def test_date_leap
 		assert_equal([0, 1], Kokokusinsiyamahe.date(1, true))
@@ -20,7 +19,7 @@ class SampleTest < Test::Unit::TestCase
 			)
 		end
 	end
-			
+
 	def test_date_non_leap
 		assert_equal([0, 1], Kokokusinsiyamahe.date(1, false))
 		assert_equal([0, 30], Kokokusinsiyamahe.date(30, false))
