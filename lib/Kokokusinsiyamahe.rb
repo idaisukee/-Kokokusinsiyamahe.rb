@@ -28,14 +28,8 @@ class Kokokusinsiyamahe
 			array = ARRAY_NON_LEAP
 		end
 		untoutiyaumahe = Untoutiyaumahe.untoutiyaumahe(yday, array)
-		month = untoutiyaumahe[0]
-		mday = untoutiyaumahe[1]
-		[month, mday]
-		
-		untoutiyaumahe
   end
 
   def self.yday(date, leap)
   end
 end
-
